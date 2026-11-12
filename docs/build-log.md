@@ -56,6 +56,24 @@
 ![EventBridge rule](../screenshots/07-eventbridge-rule.png)
 
 
+### 8. Test 1: Public SSH Exposure 
+- Created security group `test-open-ssh` with an inbound rule allowing SSH (TCP 22) from `0.0.0.0/0`.
+- Rule was automatically revoked and an email alert was delivered.
+
+| Time (EST) | Event |
+|---|---|
+| 3:17:43 PM | SSH rule opened to `0.0.0.0/0` (CloudTrail eventTime `20:17:43Z` UTC) |
+| ~3:17:47 PM | Lambda revoked the rule (measured: **3.6 seconds** after exposure) |
+| 3:17 PM | SNS email alert received |
+| 3:18 PM | Console confirmed: 0 inbound rules |
+
+- **Note:** Timestamps in AWS events are UTC.
+
+![Rule open](../screenshots/08-rule-open.png)
+![Rule revoked](../screenshots/09-rule-revoked.png)
+![Email alert](../screenshots/10-email-alert.png)
+
+
 ---
 
 ## Repo Setup
