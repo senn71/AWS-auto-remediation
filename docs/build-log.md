@@ -22,6 +22,11 @@
 
 ![CloudTrail trail](../screenshots/02-cloudtrail.png)
 
+### 3. GuardDuty (skipped)
+- **What:** Attempted to enable Amazon GuardDuty for threat detection.
+- **Result:** Blocked: "Access to this service is not supported." The account is managed by an organization that restricts this service (likely via a Service Control Policy).
+- **Decision:** Proceeded without it. Detection is handled by CloudTrail + EventBridge pattern matching.
+
 ---
 
 ## Repo Setup
