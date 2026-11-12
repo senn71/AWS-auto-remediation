@@ -35,6 +35,7 @@
 - Created role `ssh-remediation-lambda-role` with a trust policy allowing only Lambda to assume it.
 - **Permissions:** `AWSLambdaBasicExecutionRole` (CloudWatch logging) plus an inline policy allowing `ec2:DescribeSecurityGroups`, `ec2:RevokeSecurityGroupIngress`, and `sns:Publish` scoped to the `SecurityAlerts` topic.
 - Least privilege. The function can only do the exact actions remediation needs.
+- Initially used the SNS *subscription* ARN in the IAM policy. Corrected to the *topic* ARN, since Lambda publishes to the topic, not to an individual subscriber.
 
 ![IAM role](../screenshots/05-iam-role.png)
 
