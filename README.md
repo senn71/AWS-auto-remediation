@@ -128,7 +128,6 @@ All resources are in one region (`us-east-2`), since EventBridge only receives e
 
 - **Topic ARN vs. subscription ARN.** I first scoped the IAM policy to the SNS *subscription* ARN, which would have caused an `AccessDenied` on publish. Lambda publishes to the *topic*, not to an individual subscriber.
 - **Event pattern precision.** An EventBridge pattern must match exactly. A malformed `eventSource` value matches nothing and fails silently.
-- **Timestamps are UTC.** AWS events are logged in UTC, so correlating them with local-time screenshots requires converting (EST = UTC−5).
 - **Scheduled vs. event-pattern rules.** EventBridge has both. Scheduled rules fire on a timer; this project needs an event-pattern rule that fires when a matching event arrives.
 
 ---
