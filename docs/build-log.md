@@ -7,7 +7,7 @@
 
 ### 1. Zero-Spend Budget
 - Created a Zero-Spend budget in AWS Budgets that emails me if spending exceeds $0.01.
-- Meant to cost guardrail so any resource that leaves the Free Tier is caught immediately.
+- Purpose is to cost guardrail so any resource that leaves the Free Tier is caught immediately.
   
 ![Zero-spend budget](../screenshots/01-budget.png)
 
@@ -20,7 +20,7 @@
 
 ### 3. GuardDuty (skipped)
 - Attempted to enable Amazon GuardDuty for threat detection.
-- Blocked due to the service not being supported for my account tier level. 
+- Blocked by an organization-level restriction on this account ("Access to this service is not supported").
 - Proceeded without it. Detection is handled by CloudTrail + EventBridge pattern matching.
 
 
@@ -40,7 +40,7 @@
 
 
 ### 6. Lambda Function
-- Created `ssh-auto-remediation` (.py file) using the `ssh-remediation-lambda-role` execution role.
+- Created `ssh-auto-remediation` (Python 3.12) using the `ssh-remediation-lambda-role` execution role.
 - **Config:** Added environment variable `SNS_TOPIC_ARN` (topic ARN, not subscription ARN). Raised timeout from 3s to 15s to avoid cold-start cutoffs.
   
 ![Lambda function](../screenshots/06-lambda.png)
