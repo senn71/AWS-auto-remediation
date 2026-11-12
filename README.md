@@ -1,6 +1,6 @@
 # Automated Cloud Threat Remediation (AWS)
 
-An event-driven security workflow that detects when an EC2 security group exposes SSH (port 22) to the entire internet and automatically revokes the rule, with no human intervention. Average time from exposure to fix: **3.6 seconds**.
+A security workflow that detects when an EC2 security group exposes SSH (port 22) to the entire internet and automatically revokes the rule, with no human intervention. Average time from exposure to fix: **3.6 seconds**.
 
 **Stack:** AWS CloudTrail · Amazon EventBridge · AWS Lambda (Python 3.12, boto3) · Amazon SNS · AWS IAM
 
