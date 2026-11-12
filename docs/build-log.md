@@ -5,8 +5,6 @@
 
 ---
 
-## Phase 1: Safety & Logging Setup — Nov 12, 2026
-
 ### 1. Zero-Spend Budget
 - Created a Zero-Spend budget in AWS Budgets that emails me if spending exceeds $0.01.
 - Meant to cost guardrail so any resource that leaves the Free Tier is caught immediately.
