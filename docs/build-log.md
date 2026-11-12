@@ -73,6 +73,13 @@
 ![Rule revoked](../screenshots/09-rule-revoked.png)
 ![Email alert](../screenshots/10-email-alert.png)
 
+### 9. More Tests: Public SSH Exposure 
+| Test | Remediation time |
+|---|---|
+| 1 | 3.6 s |
+| 2 | 3.8 s|
+| 3 | 3.5 s|
+| **Average** | 3.6 s|
 
 ---
 
