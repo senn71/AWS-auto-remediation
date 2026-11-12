@@ -30,10 +30,10 @@ flowchart LR
 
 | Component | Role |
 |---|---|
-| **CloudTrail** | Records every API call in the account (the "security camera") |
-| **EventBridge** | Matches `AuthorizeSecurityGroupIngress` events in real time (the "tripwire") |
-| **Lambda** | Inspects the new rule and revokes it if it exposes SSH to the internet (the "responder") |
-| **SNS** | Emails an incident summary: who made the change, when, and what was revoked (the "alert") |
+| **CloudTrail** | Records every API call in the account |
+| **EventBridge** | Matches `AuthorizeSecurityGroupIngress` events in real time |
+| **Lambda** | Inspects the new rule and revokes it if it exposes SSH to the internet |
+| **SNS** | Emails an incident summary: who made the change, when, and what was revoked |
 
 ---
 
