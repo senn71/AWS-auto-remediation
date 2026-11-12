@@ -46,7 +46,6 @@
 
 ![IAM role](../screenshots/05-iam-role.png)
 
-![SNS subscription confirmed](../screenshots/04-sns-confirmed.png)
 
 ---
 
