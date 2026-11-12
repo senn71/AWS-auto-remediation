@@ -55,6 +55,16 @@
 
 ![Lambda function](../screenshots/06-lambda.png)
 
+## Phase 5: Tripwire (EventBridge)
+
+### 7. EventBridge Rule
+- **What:** Created rule `detect-sg-ingress-change` on the default event bus, targeting the `ssh-auto-remediation` Lambda.
+- **Pattern:** Matches CloudTrail-recorded EC2 API calls where `eventName` is `AuthorizeSecurityGroupIngress`.
+- **Why:** This API call is what adds an inbound rule to a security group, the moment a port gets opened.
+- **Issue:** Initially opened "Scheduled rules (legacy)," which is for timer-based rules. Switched to an event-pattern rule via Event buses → default. Used the Advanced builder to paste the JSON pattern.
+
+![EventBridge rule](../screenshots/07-eventbridge-rule.png)
+
 
 ---
 
