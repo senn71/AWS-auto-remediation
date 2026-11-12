@@ -1,7 +1,7 @@
 ## Build Log
 # Build Log
 
-**Region:** us-east-1 <!-- replace with yours -->
+**Region:** us-east-2 (US East, Ohio)
 
 ---
 
@@ -26,6 +26,15 @@
 - **What:** Attempted to enable Amazon GuardDuty for threat detection.
 - **Result:** Blocked: "Access to this service is not supported." The account is managed by an organization that restricts this service (likely via a Service Control Policy).
 - **Decision:** Proceeded without it. Detection is handled by CloudTrail + EventBridge pattern matching.
+
+## Phase 2: Notification System (SNS)
+
+### 4. SNS Topic and Email Subscription
+- **What:** Created a Standard SNS topic `SecurityAlerts` and subscribed my email.
+- **Why:** SNS is the alerting channel. Lambda will publish a message to this topic after each remediation, and SNS delivers it to every subscriber.
+- **Result:** Subscription status shows Confirmed.
+
+![SNS subscription confirmed](../screenshots/04-sns-confirmed.png)
 
 ---
 
