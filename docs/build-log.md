@@ -28,6 +28,7 @@
 - **Decision:** Proceeded without it. Detection is handled by CloudTrail + EventBridge pattern matching.
 
 ## Phase 2: Notification System (SNS)
+![SNS subscription confirmed](../screenshots/04-sns-confirmed.png)
 
 ### 4. SNS Topic and Email Subscription
 - **What:** Created a Standard SNS topic `SecurityAlerts` and subscribed my email.
