@@ -46,6 +46,15 @@
 
 ![IAM role](../screenshots/05-iam-role.png)
 
+## Phase 4: Responder (Lambda)
+
+### 6. Lambda Function
+- **What:** Created `ssh-auto-remediation` (Python 3.12) using the `ssh-remediation-lambda-role` execution role.
+- **Config:** Added environment variable `SNS_TOPIC_ARN` (topic ARN, not subscription ARN). Raised timeout from 3s to 15s to avoid cold-start cutoffs.
+- **Issue:** Initially used the SNS subscription ARN in the IAM policy. Corrected to the topic ARN, since Lambda publishes to the topic.
+
+![Lambda function](../screenshots/06-lambda.png)
+
 
 ---
 
