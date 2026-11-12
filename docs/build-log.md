@@ -12,7 +12,7 @@
 - **Why:** Cost guardrail so any resource that leaves the Free Tier is caught immediately.
 - **Result:** Budget `ZeroSpendBudget` shows status OK at $0.00 spent.
 - **Issue:** AWS now requires new email recipients to verify their address before alerts are delivered. Verified via the email link.
-
+  
 ![Zero-spend budget](../screenshots/01-budget.png)
 
 ### 2. CloudTrail Trail
@@ -28,12 +28,14 @@
 - **Decision:** Proceeded without it. Detection is handled by CloudTrail + EventBridge pattern matching.
 
 ## Phase 2: Notification System (SNS)
-![SNS subscription confirmed](../screenshots/04-sns-confirmed.png)
 
 ### 4. SNS Topic and Email Subscription
 - **What:** Created a Standard SNS topic `SecurityAlerts` and subscribed my email.
 - **Why:** SNS is the alerting channel. Lambda will publish a message to this topic after each remediation, and SNS delivers it to every subscriber.
 - **Result:** Subscription status shows Confirmed.
+  
+![SNS subscription confirmed](../screenshots/04-sns-confirmed.png)
+
 
 ## Phase 3: Permissions (IAM)
 
