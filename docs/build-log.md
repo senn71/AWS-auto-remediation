@@ -34,6 +34,15 @@
 - **Why:** SNS is the alerting channel. Lambda will publish a message to this topic after each remediation, and SNS delivers it to every subscriber.
 - **Result:** Subscription status shows Confirmed.
 
+## Phase 3: Permissions (IAM)
+
+### 5. IAM Role for Lambda
+- **What:** Created role `ssh-remediation-lambda-role` with a trust policy allowing only Lambda to assume it.
+- **Permissions:** `AWSLambdaBasicExecutionRole` (CloudWatch logging) plus an inline policy allowing `ec2:DescribeSecurityGroups`, `ec2:RevokeSecurityGroupIngress`, and `sns:Publish` scoped to the `SecurityAlerts` topic.
+- **Why:** Least privilege. The function can only do the exact actions remediation needs.
+
+![IAM role](../screenshots/05-iam-role.png)
+
 ![SNS subscription confirmed](../screenshots/04-sns-confirmed.png)
 
 ---
