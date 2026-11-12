@@ -74,13 +74,17 @@
 ![Email alert](../screenshots/10-email-alert.png)
 
 ### 9. More Tests: Public SSH Exposure 
-| Test | Remediation time |
-|---|---|
-| 1 | 3.6 s |
-| 2 | 3.8 s|
-| 3 | 3.5 s|
-| **Average** | 3.6 s|
+| Test | Opened (UTC) | Remediation time |
+|---|---|---|
+| 1 | 20:17:43 | 3.6 s |
+| 2 | 20:38:12 | 3.8 s |
+| 3 | 20:39:15 | 3.5 s |
+| **Average** | | **3.6 s** |
 
+
+- CloudTrail Event history shows each `AuthorizeSecurityGroupIngress` (by my user session) followed ~3 seconds later by a `RevokeSecurityGroupIngress` performed by `ssh-auto-remediation`, independently confirming the Lambda's measured times.
+
+![CloudTrail revoke events](../screenshots/12-cloudtrail-revoke.png)
 ---
 
 ## Repo Setup
