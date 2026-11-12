@@ -1,14 +1,14 @@
-import boto3
+import boto3 #boto3 is AWS's python library
 import json
 import os
 from datetime import datetime, timezone
 
-ec2 = boto3.client('ec2')
+ec2 = boto3.client('ec2') #creating "remote controls" for EC2 and SNS
 sns = boto3.client('sns')
 SNS_TOPIC_ARN = os.environ['SNS_TOPIC_ARN']
 
 
-def exposes_ssh(perm):
+def exposes_ssh(perm): # checks whether the rule covers port 22
     """True if this rule's protocol/port range includes port 22."""
     protocol = perm.get('ipProtocol')
     if protocol == '-1':                      # -1 = "All traffic"
