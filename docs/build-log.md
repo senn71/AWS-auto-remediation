@@ -84,7 +84,7 @@
 
 - CloudTrail Event history shows each `AuthorizeSecurityGroupIngress` (by my user session) followed ~3 seconds later by a `RevokeSecurityGroupIngress` performed by `ssh-auto-remediation`, independently confirming the Lambda's measured times.
   
-![CloudWatch metrics](../screenshots/11-cloudwatch-metrics.png)
+![CloudWatch metrics](../screenshots/11-cloudwatch-logs.png)
 ![CloudTrail revoke events](../screenshots/12-cloudtrail-revoke.png)
 ---
 
